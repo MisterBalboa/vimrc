@@ -12,16 +12,24 @@ then
   echo "Installing vimplug for Linux..."
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  exit
 fi
 
-echo 'installing fuzzy finder'
-cd ../ && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+cd $HOME
 
-mkdir ~/vim_tmp
+if [ ! -d "$HOME/.fzf" ]
+then
+  echo 'installing fuzzy finder'
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
+
+if [ ! -d "$HOME/vim_tmp" ]
+then
+  mkdir ~/vim_tmp
+fi
+
 touch ~/.vimrc
-cat vim_config_file > ~/.vimrc
+cat $HOME/vimrc/vim_config_file > ~/.vimrc
 
 if [ -f ~/.bashrc ]
 then
