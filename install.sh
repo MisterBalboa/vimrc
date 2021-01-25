@@ -19,7 +19,9 @@ echo 'installing fuzzy finder'
 cd ../ && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-cd vimrc && cat vimrc > ~/.vimrc
+mkdir ~/vim_tmp
+touch ~/.vimrc
+cat vim_config_file > ~/.vimrc
 
 if [ -f ~/.bashrc ]
 then
