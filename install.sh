@@ -29,7 +29,7 @@ then
 fi
 
 touch ~/.vimrc
-cat $HOME/vimrc/vim_config_file > ~/.vimrc
+cat $HOME/vimrc/.vimrc_slim > ~/.vimrc
 
 if [ -f ~/.bashrc ]
 then

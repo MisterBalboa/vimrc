@@ -1,0 +1,43 @@
+set directory=~/vim_tmp//
+
+" Basics
+syntax on
+inoremap jk <Esc>
+let mapleader = "-"
+vnoremap <leader>cc "*y
+set ruler
+set numberwidth=1
+inoremap jk <Esc>
+let mapleader = "-"
+inoremap <c-c> <nop>
+
+" Change between splits in normal mode 
+nnoremap <leader>ww <C-w><C-w>
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wl <C-w>l
+
+nnoremap <leader>cmd :wa \| !clear &&<Space>
+
+" Fzf utility
+set rtp+=/usr/local/opt/fzf
+nnoremap <leader>ff :FZF<Enter>
+
+nnoremap / /\v
+
+set backspace=indent,eol,start
+
+vnoremap <leader>cc "*y
+nnoremap <C-s> :%s/:put +
+
+nnoremap <leader>gcc :wa \| !clear && gcc -o binary %
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" Treat tabs as spaces
+set expandtab
+set laststatus=2
+set statusline=
