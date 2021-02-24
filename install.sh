@@ -28,8 +28,8 @@ then
   mkdir ~/vim_tmp
 fi
 
-touch ~/.vimrc
-cat $HOME/vimrc/.vimrc_slim > ~/.vimrc
+touch $HOME/.vimrc
+cat ./.vimrc_slim > $HOME/.vimrc
 
 if [ -f ~/.bashrc ]
 then
