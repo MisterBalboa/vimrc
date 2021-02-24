@@ -1,5 +1,7 @@
 #!/bin/bash
 
+original_path=$(pwd)
+
 if [ $(uname -s) = "Darwin" ]
 then
   echo "Installing vimplug for MacOS..."
@@ -19,24 +21,27 @@ cd $HOME
 if [ ! -d "$HOME/.fzf" ]
 then
   echo 'installing fuzzy finder'
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+  git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+  $HOME/.fzf/install
 fi
 
+echo 'installing custom vim config...'
 if [ ! -d "$HOME/vim_tmp" ]
 then
-  mkdir ~/vim_tmp
+  mkdir $HOME/vim_tmp
 fi
 
 touch $HOME/.vimrc
+
+cd $original_path
 cat ./.vimrc_slim > $HOME/.vimrc
 
-if [ -f ~/.bashrc ]
+if [ -f $HOME/.bashrc ]
 then
-  source ~/.bashrc
+  source $HOME/.bashrc
 fi
 
-if [ -f ~/.zshrc ]
+if [ -f $HOME/.zshrc ]
 then
-  source ~/.zshrc
+  source $HOME/.zshrc
 fi
